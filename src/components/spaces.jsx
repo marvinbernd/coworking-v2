@@ -61,31 +61,34 @@ class Spaces extends Component {
     return (
       <React.Fragment>
         <Container
-          style={tw`border-t-2 border-b-2 border-solid border-gray-200`}
+          style={tw`flex justify-between items-center border-t-2 border-b-2 border-solid border-gray-200`}
         >
           <Select
             options={cities}
             onChange={this.handleCitySelect}
             placeholder="Every City"
           />
+          <span>{totalCount} Results</span>
         </Container>
         <Container>
           <Grid style={tw`grid-cols-2`}>
-            <Grid style={tw`grid-cols-2`}>
-              {spaces.map((space) => (
-                <SpaceItem
-                  key={space._id}
-                  space={space}
-                  onItemClick={this.handleItemClick}
+            <div>
+              <Grid style={tw`grid-cols-2 items-stretch`}>
+                {spaces.map((space) => (
+                  <SpaceItem
+                    key={space._id}
+                    space={space}
+                    onItemClick={this.handleItemClick}
+                  />
+                ))}
+                <Pagination
+                  itemsCount={totalCount}
+                  pageSize={pageSize}
+                  currentPage={currentPage}
+                  onPageChange={this.handlePageChange}
                 />
-              ))}
-              <Pagination
-                itemsCount={totalCount}
-                pageSize={pageSize}
-                currentPage={currentPage}
-                onPageChange={this.handlePageChange}
-              />
-            </Grid>
+              </Grid>
+            </div>
             <SpacesMap spaces={spaces} />
           </Grid>
         </Container>

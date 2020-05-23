@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import tw from "twin.macro";
+import SearchBox from "./common/searchBox";
 
 const Nav = styled.nav`
   ${tw`flex items-center justify-between flex-wrap p-6`}
@@ -31,7 +32,7 @@ const MenuButtonIcon = styled.svg`
 `;
 
 const MenuItemsWrapper = styled.div`
-  ${tw`w-full block flex-grow lg:flex lg:items-center lg:w-auto`}
+  ${tw`w-full block flex-grow justify-between lg:flex lg:items-center lg:w-auto`}
 `;
 
 const MenuItemsLeft = styled.div`
@@ -39,11 +40,7 @@ const MenuItemsLeft = styled.div`
 `;
 
 const MenuItem = styled.a`
-  ${tw`block mt-4 lg:inline-block lg:mt-0 mr-4`}
-`;
-
-const MenuItemButton = styled.a`
-  ${tw`inline-block text-sm px-4 py-2 leading-none border rounded border-black hover:bg-white mt-4 lg:mt-0`}
+  ${tw`block mt-4 lg:inline-block lg:mt-0 ml-8 font-semibold`}
 `;
 
 const Header = () => {
@@ -59,7 +56,7 @@ const Header = () => {
           >
             <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
           </Logo>
-          <LogoText>Tailwind CSS</LogoText>
+          <LogoText>COWORKING</LogoText>
         </LogoWrapper>
         <MenuButtonWrapper>
           <MenuButton>
@@ -73,13 +70,13 @@ const Header = () => {
           </MenuButton>
         </MenuButtonWrapper>
         <MenuItemsWrapper>
-          <MenuItemsLeft>
-            <MenuItem href="#responsive-header">Docs</MenuItem>
-            <MenuItem href="#responsive-header">Examples</MenuItem>
-            <MenuItem href="#responsive-header">Blog</MenuItem>
-          </MenuItemsLeft>
+          <MenuItemsLeft></MenuItemsLeft>
           <div>
-            <MenuItemButton href="#">Download</MenuItemButton>
+            <SearchBox />
+            <MenuItem href="#responsive-header">Alle Coworking Spaces</MenuItem>
+            <MenuItem href="#responsive-header">Magazine</MenuItem>
+            <MenuItem href="#responsive-header">Newsletter</MenuItem>
+            <MenuItem href="#responsive-header">Kontakt</MenuItem>
           </div>
         </MenuItemsWrapper>
       </Nav>
