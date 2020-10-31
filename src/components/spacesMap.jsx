@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import React, { Component } from 'react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 const containerStyle = {
-  position: "relative",
-  width: "100%",
-  height: "85vh",
+  position: 'relative',
+  width: '100%',
+  height: '85vh',
 };
 
 export class SpacesMap extends Component {
@@ -57,5 +57,5 @@ export class SpacesMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyDa5TYZD-Zjwkr_XR6t_xJ5BzSzSjM5-YU",
+  apiKey: 'AIzaSyDa5TYZD-Zjwkr_XR6t_xJ5BzSzSjM5-YU',
 })(SpacesMap);
