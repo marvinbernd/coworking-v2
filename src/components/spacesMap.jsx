@@ -57,5 +57,5 @@ export class SpacesMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDa5TYZD-Zjwkr_XR6t_xJ5BzSzSjM5-YU',
+  apiKey: process.env.REACT_APP_GOOGLE_MAPS_API,
 })(SpacesMap);
